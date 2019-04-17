@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_test: 
+  id_user: 
+  score: 1.5
+  total_time: 
+
+two:
+  id_test: 
+  id_user: 
+  score: 1.5
+  total_time: 

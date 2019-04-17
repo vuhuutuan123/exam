@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_answer: 1
+  id_question: 1
+  id_topic: 1
+  time: 1
+  status: 
+
+two:
+  id_answer: 1
+  id_question: 1
+  id_topic: 1
+  time: 1
+  status: 
