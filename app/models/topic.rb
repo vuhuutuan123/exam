@@ -1,3 +1,3 @@
 class Topic < ApplicationRecord
-  belongs_to :test
+  has_many :tests
 end

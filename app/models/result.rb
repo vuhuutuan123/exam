@@ -1,3 +1,3 @@
 class Result < ApplicationRecord
-  belongs_to :user_test
+  has_one :user_test
 end
