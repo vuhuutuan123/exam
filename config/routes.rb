@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: { sessions: 'sessions' }
+  devise_for :admin, controllers: { sessions: 'admin/sessions' }
 
-  devise_scope :admins do
-    get "/admins/home", to: "home#index" , as: :admin_home
+  namespace :admin do
+    resources :home, to: "home#index" , as: :home
+
   end
+
 end
