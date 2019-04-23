@@ -45,6 +45,7 @@ class Admin::TopicsController < ApplicationController
   def set_topic
     @topic = Topic.find(params[:id])
   end
+  
   def topic_params 
     params.require(:topic).permit :name
   end
