@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :home, to: "home#index" , as: :home
-    resources :topic
+    resources :topics
   end
-
 end
