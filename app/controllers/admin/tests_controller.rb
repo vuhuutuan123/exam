@@ -39,7 +39,6 @@ class Admin::TestsController < ApplicationController
   def show
     @test = Test.find_by(id: params[:id])
     @questions = @test.questions
-    
   end
 
   private
