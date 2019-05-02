@@ -15,6 +15,9 @@
         <%= render 'layouts/admin/sidebar' %>
         <div id="page-wrapper" >
           <div id="page-inner">
+            <% flash.each do |msg, value| %> 
+              <%= content_tag :div, value, class: "alert alert-#{msg}" %>
+            <% end %>
             <%= yield %>
           </div>
         </div>

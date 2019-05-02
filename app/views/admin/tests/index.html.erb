@@ -1,0 +1,18 @@
+<h1>List test</h1>
+<hr>
+<table class="table table-bordered">
+  <tbody>
+    <% @tests.each do |test| %>
+      <tr>
+        <td><%= test.id %></td>
+        <td><%= link_to 'Show', admin_test_path(test) %> 
+        | 
+        <%= link_to 'Edit', edit_admin_test_path(test) %> 
+        | 
+        
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%#= link_to 'Add topic', '#' %>

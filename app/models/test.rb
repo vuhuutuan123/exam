@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
-  # has_many :user_tests
-  # has_many :users , through :user_tests
-  has_and_belongs_to_many :users
+  has_many :user_tests
+  has_many :users , through: :user_tests
   belongs_to :topic
-  has_many :questions
+  has_many :questions, dependent: :destroy, inverse_of: :test, autosave: true
+  accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:content].blank? }
 end
