@@ -17,3 +17,5 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require bootstrap.min
+//= require_nested_form_fields
+//= require cocoon

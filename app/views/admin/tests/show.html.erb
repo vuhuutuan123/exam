@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @test.id %>
+  <ul>
+    <% @questions.each do |q| %>
+      <li><%= q.content %>
+        <ul class="option">
+          <% q.answers.each do |a| %>
+            <input type="radio" name="answers" value="<%= a.id %>"><%= a.content %>
+            <br>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</p>

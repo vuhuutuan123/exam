@@ -5,7 +5,7 @@
     <% @topics.each do |topic| %>
       <tr>
         <td><%= topic.name %></td>
-        <td><%= link_to 'Show', '#' %> 
+        <td><%= link_to 'Show', admin_topic_path(topic) %> 
         | 
         <%= link_to 'Edit', edit_admin_topic_path(topic) %> 
         | 
@@ -15,4 +15,4 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Create topic', new_admin_topic_path %>
+<%= link_to 'Add topic', new_admin_topic_path %>

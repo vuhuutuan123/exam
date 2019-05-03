@@ -11,13 +11,18 @@ class Admin::TopicsController < ApplicationController
     @topic = Topic.new
   end
 
+  def show
+    @topic = Topic.find_by(id: params[:id])
+    @tests = @topic.tests
+  end
+
   def create
     @topic = Topic.new topic_params
     if @topic.save
       flash[:success] = 'Successfully'
       redirect_to admin_topics_path
     else
-      flash[:warning] = 'Error'
+      flash[:danger] = 'Error'
       render 'new'
     end
   end
