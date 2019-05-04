@@ -8,7 +8,7 @@
       <li><%= q.content %>
         <ul class="option">
           <% q.answers.each do |a| %>
-            <input type="radio" name="answers" value="<%= a.id %>"><%= a.content %>
+            <li><input type="radio" name="<%= q.id %>" value="<%= a.id %>"><%= a.content %></li>
             <br>
           <% end %>
         </ul>
