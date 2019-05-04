@@ -51,8 +51,8 @@ class Admin::TestsController < ApplicationController
   private
   def test_params 
     params.require(:test).permit(:topic_id, :time, :status, 
-      questions_attributes: [:content,
-        answers_attributes: [:content]
+      questions_attributes: [:content, :_destroy,
+        answers_attributes: [:content, :_destroy]
       ]
     )
   end
@@ -63,11 +63,9 @@ class Admin::TestsController < ApplicationController
 
   def check_status
     @test = Test.find(params[:id])
-    if(@test.status == false )
+    unless @test.status
       flash[:warning] = "This is a public test. Can't edit or delete"
       redirect_to admin_tests_path
-    else
-      return 
     end
   end
 end
