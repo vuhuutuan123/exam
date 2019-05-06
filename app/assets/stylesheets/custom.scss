@@ -3,6 +3,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+/*=====================ADMIN==========================*/
 /*==========HOME===========*/
 textarea {
   resize: none;
@@ -102,4 +103,20 @@ textarea {
 }
 .link-questions{
   margin-bottom: 10px;
+}
+
+/*=====================USER==========================*/
+//*============HOME============*/
+.navbar-cus{
+  margin-bottom: 0;
+  min-height: 70px;
+  a{
+    color: #fff;
+    font-size: 40px;
+  }
+  a:last-child{
+    font-size: 24px;
+    display: block;
+    padding-top: 14px;
+  }
 }

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  devise_for :user, controllers: {sessions: 'user/sessions'}
   devise_for :admin, controllers: {sessions: 'admin/sessions'}
 
   namespace :admin do
@@ -6,4 +8,10 @@ Rails.application.routes.draw do
     resources :topics
     resources :tests
   end
+
+  namespace :user do
+    resources :home
+    resources :profile
+  end
+
 end
