@@ -1,10 +1,9 @@
 class User::ProfileController < ApplicationController
   layout "user/application"
   before_action :authenticate_user!
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :show]
   
   def show
-    @user = User.find_by(id: params[:id])
   end
 
   def edit
@@ -15,7 +14,7 @@ class User::ProfileController < ApplicationController
       flash[:success] = "Successfully"
       render 'show'
     else
-      flash[:success] = "Successfully"
+      flash[:warning] = "Error"
       render 'edit'
     end
   end
@@ -26,6 +25,6 @@ class User::ProfileController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit :username
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
-end    
+end 
