@@ -120,3 +120,23 @@ textarea {
     padding-top: 14px;
   }
 }
+.banner{
+  a{
+    border: 3px solid #337ab7;
+    padding: 10px 50px;
+    border-radius: 11px;
+    font-size: 21px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: #337ab7;
+    &:hover{
+      text-decoration: none;
+      color: #337ab7;
+      background: #fff;
+    }
+  }
+  p{
+    margin-bottom: 20px;
+  }
+}
