@@ -1,0 +1,21 @@
+<h1>List user</h1>
+<hr>
+<%= search_form_for @search, url: admin_user_index_path , class: "form-inline" do |f| %>
+  <div class="form-group">
+    <%= f.label :username, 'User Name:' %>
+    <%= f.text_field :username_cont, class: "form-control" %><br>
+  </div>
+  <%= f.submit 'Search', class: "btn btn-default" %>
+<% end %>
+<br>
+
+<table class="table table-bordered">
+  <tbody>
+    <% @users.each do |u| %>
+      <tr>
+        <td><%= u.username %></td>
+        <td><%= link_to 'Show', '#' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
