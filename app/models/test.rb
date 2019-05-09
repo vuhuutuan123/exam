@@ -6,6 +6,6 @@ class Test < ApplicationRecord
   accepts_nested_attributes_for :questions, allow_destroy: true, :reject_if => lambda { |a| a[:content].blank? }
 
   def self.public
-    where(status: true)
+    where(status: false)
   end
 end
