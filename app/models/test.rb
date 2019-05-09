@@ -4,4 +4,6 @@ class Test < ApplicationRecord
   belongs_to :topic
   has_many :questions, dependent: :destroy, inverse_of: :test, autosave: true
   accepts_nested_attributes_for :questions, allow_destroy: true, :reject_if => lambda { |a| a[:content].blank? }
+
+  scope :public_test, ->{where status: false}
 end

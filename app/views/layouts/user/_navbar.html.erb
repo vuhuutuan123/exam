@@ -1,0 +1,8 @@
+<nav class="navbar navbar-inverse navbar-cus ">
+  <div class="container">
+    <%= link_to "USER INDEX", user_home_index_path  %>
+    <ul class="nav navbar-nav navbar-right">
+      <%= link_to "Logout" , destroy_user_session_path, method: :delete %>
+    </ul>
+  </div>
+</nav>
