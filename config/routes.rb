@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   devise_for :user, controllers: {sessions: 'user/sessions'}
   devise_for :admin, controllers: {sessions: 'admin/sessions'}
 
@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :home
     resources :topics
     resources :tests
+    resources :user
   end
 
   namespace :user do
