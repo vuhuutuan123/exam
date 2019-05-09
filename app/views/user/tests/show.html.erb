@@ -4,7 +4,7 @@
   <strong>Name:</strong>
   <%= @test.id %>
   <ul>
-    <% @questions.each do |q| %>
+    <% @test.questions.each do |q| %>
       <li><%= q.content %>
         <ul class="option">
           <% q.answers.each do |a| %>

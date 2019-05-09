@@ -3,7 +3,7 @@ class User::TestsController < ApplicationController
   before_action :authenticate_user! , except: [:index, :show]
 
   def index
-    @tests = Test.public
+    @tests = Test.public_test
   end
 
   def show

@@ -5,7 +5,5 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy, inverse_of: :test, autosave: true
   accepts_nested_attributes_for :questions, allow_destroy: true, :reject_if => lambda { |a| a[:content].blank? }
 
-  def self.public
-    where(status: false)
-  end
+  scope :public_test, ->{where status: false}
 end
