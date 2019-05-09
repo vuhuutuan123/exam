@@ -1,10 +1,9 @@
 <h1>List user</h1>
 <hr>
-
 <%= search_form_for @search, url: admin_user_index_path , class: "form-inline" do |f| %>
 	<div class="form-group">
-    	<%= f.label :username, 'User Name:' %>
-      <%= f.text_field :username_cont, class: "form-control" %><br>
+    <%= f.label :username, 'User Name:' %>
+    <%= f.text_field :username_cont, class: "form-control" %><br>
   </div>
   <%= f.submit 'Search', class: "btn btn-default" %>
 <% end %>
