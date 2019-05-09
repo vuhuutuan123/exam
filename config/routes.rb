@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :user do
     resources :home
     resources :profile
+    resources :tests
   end
 
 end

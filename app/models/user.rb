@@ -4,8 +4,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :recoverable, :rememberable, :validatable
   has_many :user_tests 
   has_many :tests , through: :user_tests
-
-  def admin?
-    false
-  end
 end
