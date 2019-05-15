@@ -4,10 +4,9 @@
   <strong>Name:</strong>
 
   <%= form_for [:user, @user_test] do |form| %>
-
-    <ul>
-      <%= form.fields_for :user_answers do |usa| %>
-        <% @test.questions.each do |question| %>
+    <% @test.questions.each do |question| %>
+      <ul>
+        <%= form.fields_for :user_answers do |usa| %>
           <%= form.hidden_field :user_id, value: current_user.id  %>
           <%= form.hidden_field :test_id, value: @test.id %>
           <li><%= question.content %>
@@ -23,8 +22,8 @@
             </ul>
           </li>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    <% end %>
     <div class="actions">
       <%= form.submit "Get my results", class: 'btn btn-primary btn-md' %>
     </div>
