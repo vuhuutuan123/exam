@@ -2,16 +2,14 @@
 
 <div class ="container">
   <strong>Name:</strong>
-  <%= @test.id %>
 
   <%= form_for [:user, @user_test] do |form| %>
-    <%= form.label :test_id %>
-    <%= form.text_field :test_id, class: 'form-control' %>
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: 'form-control' %>
+
     <ul>
       <%= form.fields_for :user_answers do |usa| %>
         <% @test.questions.each do |question| %>
+          <%= form.hidden_field :user_id, value: current_user.id  %>
+          <%= form.hidden_field :test_id, value: @test.id %>
           <li><%= question.content %>
             <ul class="option">
               <% question.answers.each do |answer| %>

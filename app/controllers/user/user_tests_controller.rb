@@ -9,10 +9,11 @@ class User::UserTestsController < ApplicationController
   end
 
   def show
-    @user_test = UserTest.find_by(id: params[:user_test])
+    @user_test = UserTest.find_by(id: params[:user_test]) if current_user.id == @user_test.user_id
   end
+
   def index
-    @user_test = UserTest.all
+    @user_test = UserTest.all if current_user.id == @user_test.user_id
   end
 
   def create
