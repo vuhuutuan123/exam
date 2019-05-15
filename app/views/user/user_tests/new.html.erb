@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<div class ="container">
+  <strong>Name:</strong>
+  <%= @test.id %>
+
+  <%= form_for [:user, @user_test] do |form| %>
+    <%= form.label :test_id %>
+    <%= form.text_field :test_id, class: 'form-control' %>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, class: 'form-control' %>
+    <ul>
+      <%= form.fields_for :user_answers do |usa| %>
+        <% @test.questions.each do |question| %>
+          <li><%= question.content %>
+            <ul class="option">
+              <% question.answers.each do |answer| %>
+                <li>
+                  <%= usa.hidden_field :question_id, value: question.id %>
+                  <%= usa.radio_button :answer_id, answer.id %>
+                  <%= answer.content %>
+                </li>
+                <br>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <div class="actions">
+      <%= form.submit "Get my results", class: 'btn btn-primary btn-md' %>
+    </div>
+  <% end %>
+</div>

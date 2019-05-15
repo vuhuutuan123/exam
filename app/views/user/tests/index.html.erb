@@ -5,7 +5,7 @@
     <% @tests.each do |test| %>
       <tr>
         <td><%= test.id %></td>
-        <td><%= link_to 'Show', user_test_path(test) %> 
+        <td><%= link_to 'Show', new_user_user_test_path(test: test.id) %> 
         </td>
       </tr>
     <% end %>

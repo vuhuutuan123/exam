@@ -5,18 +5,4 @@ class User::TestsController < ApplicationController
   def index
     @tests = Test.public_test
   end
-
-  def show
-    @test = Test.find_by(id: params[:id])
-    @questions = @test.questions
-  end
-
-  private
-  def test_params 
-    params.require(:test).permit(:topic_id, :time, :status, 
-      questions_attributes: [:content, :_destroy,
-        answers_attributes: [:content, :_destroy]
-      ]
-    )
-  end
 end

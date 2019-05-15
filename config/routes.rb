@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :home
     resources :profile
     resources :tests
+    resources :user_tests
   end
 
 end
