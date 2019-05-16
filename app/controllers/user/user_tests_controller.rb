@@ -8,14 +8,6 @@ class User::UserTestsController < ApplicationController
     @test = Test.find_by(id: params[:test])
   end
 
-  def show
-    @user_test = UserTest.find_by(id: params[:user_test]) 
-  end
-
-  def index
-    @user_test = UserTest.all 
-  end
-
   def create
     @user_test = UserTest.new user_test_params
     if @user_test.save
