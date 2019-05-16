@@ -1,1 +1,22 @@
 <h1>DONE</h1>
+<ul>
+  <%= form_for [:user, @user_test] do |form| %>
+    <% @user_test.test.questions.each do |q| %>
+      <ul>
+        <%= form.fields_for :user_answers do |usa| %>
+          <li><%= q.content %>
+            <ul class="option">
+              <% q.answers.each do |answer| %>
+                <li>
+                  <%= usa.radio_button :answer_id, answer.id, :disabled => true %>
+                  <%= answer.content %>
+                </li>
+                <br>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</ul>

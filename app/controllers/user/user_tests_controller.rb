@@ -5,7 +5,16 @@ class User::UserTestsController < ApplicationController
   def new
     @user_test = UserTest.new
     @user_test.user_answers.build
-    @test = Test.find_by(id: params[:test])
+    @test = Test.find_by(id: params[:test]) 
+  end
+
+  def show
+    @user_test = current_user.user_tests.all.find_by(id: params[:id]) 
+    @test = Test.find_by(id: params[:test]) 
+  end
+
+  def index
+    @user_tests = current_user.user_tests.all 
   end
 
   def create

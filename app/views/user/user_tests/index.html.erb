@@ -1,0 +1,13 @@
+<h1>List your test</h1>
+<hr>
+<table class="table table-bordered">
+  <tbody>
+    <% @user_tests.each do |us| %>
+      <tr>
+        <td><%= us.id %></td>
+        <td><%= link_to 'Show', user_user_test_path(us) %> 
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
