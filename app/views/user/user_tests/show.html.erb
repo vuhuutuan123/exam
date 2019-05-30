@@ -1,22 +1,20 @@
 <h1>DONE</h1>
 <ul>
-  <%= form_for [:user, @user_test] do |form| %>
-    <% @user_test.test.questions.each do |q| %>
-      <ul>
-        <%= form.fields_for :user_answers do |usa| %>
-          <li><%= q.content %>
-            <ul class="option">
-              <% q.answers.each do |answer| %>
-                <li>
-                  <%= usa.radio_button :answer_id, answer.id, :disabled => true %>
-                  <%= answer.content %>
-                </li>
-                <br>
+  <% @user_test.test.questions.each do |question| %>
+    <ul>
+      <li><%= question.content %>
+        <ul class="option">
+            <li>
+              <% @user_test.user_answers.each do |ua| %>
+                <% if ua.question_id == question.id %>
+                  <input type="radio" checked="true" disabled>
+                  <%= ua.answer.content %>
+                <% end %>
               <% end %>
-            </ul>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
+            </li>
+            <br>
+        </ul>
+      </li>
+    </ul>
   <% end %>
 </ul>
