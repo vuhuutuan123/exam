@@ -83,7 +83,9 @@ textarea {
   -moz-border-radius:8px;
   border-radius:8px;
   margin:5px;
-
+  &:hover{
+    transform: scale(1.1);
+  }
 }
 .div-square> a,.div-square> a:hover {
   font-size: 18px;

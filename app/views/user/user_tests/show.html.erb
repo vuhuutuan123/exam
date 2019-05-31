@@ -6,12 +6,10 @@
       <ul class="option">   
         <% question.answers.each do |answer| %>
           <li>
-            <% @user_test.user_answers.each do |ua| %>
-              <% if answer.id == ua.answer_id %>
-                <input type="radio" checked="true" disabled>
-              <% elsif ua.question_id == question.id %>
-                <input type="radio"  disabled>
-              <% end %>
+            <% if answer.id == find_answer(question.id).answer_id %>
+              <input type="radio" checked="true" disabled>
+            <% elsif find_answer(question.id).question_id == question.id %>
+              <input type="radio" disabled>
             <% end %>
             <%= answer.content %>
           </li>
