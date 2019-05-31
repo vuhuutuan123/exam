@@ -1,6 +1,7 @@
 class User::UserTestsController < ApplicationController
   layout 'user/application'
   before_action :authenticate_user!
+  include UserTestsHelper
 
   def new
     @user_test = UserTest.new

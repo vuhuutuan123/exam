@@ -8,7 +8,7 @@
           <li>
             <% if answer.id == find_answer(question.id).answer_id %>
               <input type="radio" checked="true" disabled>
-            <% elsif find_answer(question.id).question_id == question.id %>
+            <% else %>
               <input type="radio" disabled>
             <% end %>
             <%= answer.content %>
