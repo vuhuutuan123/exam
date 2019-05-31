@@ -1,20 +1,22 @@
 <h1>DONE</h1>
-<ul>
-  <% @user_test.test.questions.each do |question| %>
-    <ul>
-      <li><%= question.content %>
-        <ul class="option">
-            <li>
-              <% @user_test.user_answers.each do |ua| %>
-                <% if ua.question_id == question.id %>
-                  <input type="radio" checked="true" disabled>
-                  <%= ua.answer.content %>
-                <% end %>
+
+<% @user_test.test.questions.each do |question| %>
+  <ul>
+    <li><%= question.content %>
+      <ul class="option">   
+        <% question.answers.each do |answer| %>
+          <li>
+            <% @user_test.user_answers.each do |ua| %>
+              <% if answer.id == ua.answer_id %>
+                <input type="radio" checked="true" disabled>
+              <% elsif ua.question_id == question.id %>
+                <input type="radio"  disabled>
               <% end %>
-            </li>
-            <br>
-        </ul>
-      </li>
-    </ul>
-  <% end %>
-</ul>
+            <% end %>
+            <%= answer.content %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+<% end %>
