@@ -1,1 +1,20 @@
 <h1>DONE</h1>
+
+<% @user_test.test.questions.each do |question| %>
+  <ul>
+    <li><%= question.content %>
+      <ul class="option">   
+        <% question.answers.each do |answer| %>
+          <li>
+            <% if answer.id == find_answer(question.id).answer_id %>
+              <input type="radio" checked="true" disabled>
+            <% else %>
+              <input type="radio" disabled>
+            <% end %>
+            <%= answer.content %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+<% end %>

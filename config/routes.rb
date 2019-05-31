@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :home
     resources :profile
     resources :tests
-    resources :user_tests, only: [:new, :create]
+    resources :user_tests, only: [:new, :create, :index, :show]
   end
 
 end

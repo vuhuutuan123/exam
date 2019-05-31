@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_14_063047) do
+ActiveRecord::Schema.define(version: 2019_05_30_075929) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_05_14_063047) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "correct"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
@@ -64,9 +65,9 @@ ActiveRecord::Schema.define(version: 2019_05_14_063047) do
   create_table "user_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
     t.integer "question_id"
     t.integer "answer_id"
+    t.integer "user_test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_test_id"
   end
 
   create_table "user_tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
