@@ -11,6 +11,15 @@ class User::UserTestsController < ApplicationController
 
   def show
     @user_test = current_user.user_tests.find_by(id: params[:id]) 
+    @count_qs = 0
+    @count_as = 0
+    @user_test.test.questions.each do |qs|
+      @count_qs = @count_qs + 1
+      if find_answer(qs.id, @user_test.id).answer_id == find_correct(qs.id).id
+        @count_as = @count_as + 1
+      end
+    end
+    @score = @count_as*10/@count_qs
   end
 
   def index

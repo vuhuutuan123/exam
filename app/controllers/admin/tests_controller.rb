@@ -52,7 +52,7 @@ class Admin::TestsController < ApplicationController
   def test_params 
     params.require(:test).permit(:topic_id, :time, :status, 
       questions_attributes: [:content, :_destroy,
-        answers_attributes: [:content, :_destroy]
+        answers_attributes: [:content, :correct, :_destroy]
       ]
     )
   end
