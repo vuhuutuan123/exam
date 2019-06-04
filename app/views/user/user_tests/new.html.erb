@@ -3,7 +3,7 @@
 <div class ="container">
   <strong>Name:</strong>
 
-  <%= form_for [:user, @user_test] do |form| %>
+  <%= form_for [:user, @user_test]  do |form| %>
     <% @test.questions.each do |question| %>
       <ul>
         <%= form.fields_for :user_answers do |usa| %>
